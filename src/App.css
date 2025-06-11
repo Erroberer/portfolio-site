@@ -28,19 +28,22 @@ body {
 
 .logo {
   font-size: 2rem;
-  color: #00ffff;
+  color: #26c6da;
   font-weight: bold;
-  text-shadow: 0 0 6px #00ffff;
+  text-shadow: 0 0 6px #26c6da;
   transition: all 0.4s ease-in-out;
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
+  border-radius: 100%;
 }
 
 .logo:hover {
-  background: rgba(0, 255, 255, 0.1);
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff80;
-  transform: scale(1.05);
-  text-shadow: 0 0 12px #00ffff;
+  border-radius: 100%;
+  box-shadow: 0 0 20px #00e5ff, 0 0 40px #26c6da;
+  transform: scale(1.2);
+  text-shadow: 0 0 12px #00e5ffa4;
+  background-color:#00e5ffab ;
+  color: black;
 }
 
 .nav-links {
@@ -72,7 +75,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #00e5ff;
+  color: #26c6da;
   text-shadow: 0 0 6px #00e5ff;
 }
 
@@ -99,13 +102,36 @@ body {
 }
 
 .hero-flex h1 {
-  font-size: 2.8rem;
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff;
-  animation: fadeInDown 1.5s ease;
-  margin: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #26c6da;
+  text-shadow: 0 0 14px #00e5ff;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  letter-spacing: 1px;
 }
-
+h2 {
+  font-size: 2rem;
+  color: #26c6da;
+  border-bottom: 2px solid #4dd0e1;
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+h3 {
+  font-size: 1.15rem;
+  color: #35b1c7;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+section ul {
+  padding-left: 1.1rem;
+  margin-bottom: 1.2rem;
+}
 .hero-avatar-side {
   width: 100px;
   height: 100px;
@@ -117,6 +143,7 @@ body {
 
 .hero-avatar-side:hover {
   transform: scale(1.05);
+  
 }
 
 .hero-desc {
@@ -126,7 +153,15 @@ body {
   min-height: 1.5rem;
   /* yazı değişince zıplamaması için */
 }
-
+.hero-desc,
+section p,
+section li {
+  font-size: 1.13rem;
+  color: #e0f7fa;
+  opacity: 0.87;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
 @media (max-width: 600px) {
   .hero-flex {
     flex-direction: column;
@@ -166,16 +201,16 @@ body {
 }
 
 section {
-  margin-top: 3.5rem;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.025);
+  margin-top: 1.5rem;
+  padding: 1.7rem;
+  background-color: rgba(255,255,255,0.025);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 255, 255, 0.05);
   transition: all 0.3s ease;
 }
 
 section:hover {
-  box-shadow: 0 4px 14px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 255, 255, 0.164);
 }
 
 h2 {
@@ -189,13 +224,10 @@ h2 {
   padding-left: 1.2rem;
 }
 
+
 .project-card {
-  background-color: rgba(255, 255, 255, 0.035);
-  padding: 1rem;
-  margin-top: 1rem;
-  border-left: 3px solid #00e5ff;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  font-size: 1.09rem;
+  letter-spacing: 0.3px;
 }
 
 .project-card:hover {
@@ -207,7 +239,7 @@ a {
 }
 
 a:hover {
-  color: #00e5ff;
+  color: #26c6da;
 }
 
 .footer {
@@ -221,6 +253,7 @@ a:hover {
 .animated-line {
   font-size: 1.2rem;
   color: #b2ebf2;
+  
   margin-top: 0.5rem;
   display: flex;
   justify-content: center;
