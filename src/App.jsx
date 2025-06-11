@@ -54,7 +54,7 @@ const App = () => {
 
           <h3>🎓 Eğitim Bilgileri</h3>
           <p>
-            <strong>Ankara Üniversitesi - Bilgisayar Programcılığı (2022 - 2026)</strong>
+            <strong>Ankara Üniversitesi - Bilgisayar Programcılığı (2025 - 2026)</strong>
           </p>
 
           <h3>💻 Yazılım Dilleri ve Teknolojiler</h3>
