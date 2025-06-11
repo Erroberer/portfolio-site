@@ -24,6 +24,25 @@ body {
   background: rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.shrinked {
+  padding: 0.3rem 1.2rem;
+  background: rgba(0, 0, 0, 0.33);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.12);
+}
+
+.navbar.shrinked .logo {
+  font-size: 1.3rem;
+  padding: 0.08rem 0.3rem;
+  transition: font-size 0.3s, padding 0.3s;
+}
+
+.navbar.shrinked .nav-links a {
+  font-size: 0.97rem;
+  padding-bottom: 2px;
+  transition: font-size 0.25s, padding 0.3s;
 }
 
 .logo {
@@ -42,7 +61,7 @@ body {
   box-shadow: 0 0 20px #00e5ff, 0 0 40px #26c6da;
   transform: scale(1.2);
   text-shadow: 0 0 12px #00e5ffa4;
-  background-color:#00e5ffab ;
+  background-color: #00e5ffab;
   color: black;
 }
 
@@ -97,7 +116,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap; /* mobilde alta geçer */
+  flex-wrap: wrap;
+  /* mobilde alta geçer */
   margin-bottom: 1.5rem;
 }
 
@@ -105,11 +125,20 @@ body {
   font-size: 3rem;
   font-weight: 900;
   color: #26c6da;
-  text-shadow: 0 0 14px #00e5ff;
+  text-shadow: 0 0 3px #00e5ff;
   margin-bottom: 0.5em;
   margin-top: 0;
   letter-spacing: 1px;
+  transition: ease 0.2s;
 }
+
+.hero-flex h1:hover {
+
+  color: #20cde4;
+  text-shadow: 0 0 10px #00e5ff;
+
+}
+
 h2 {
   font-size: 2rem;
   color: #26c6da;
@@ -120,6 +149,7 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
+
 h3 {
   font-size: 1.15rem;
   color: #35b1c7;
@@ -128,10 +158,12 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.2px;
 }
+
 section ul {
   padding-left: 1.1rem;
   margin-bottom: 1.2rem;
 }
+
 .hero-avatar-side {
   width: 100px;
   height: 100px;
@@ -143,7 +175,7 @@ section ul {
 
 .hero-avatar-side:hover {
   transform: scale(1.05);
-  
+
 }
 
 .hero-desc {
@@ -153,6 +185,7 @@ section ul {
   min-height: 1.5rem;
   /* yazı değişince zıplamaması için */
 }
+
 .hero-desc,
 section p,
 section li {
@@ -162,15 +195,18 @@ section li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
+
 @media (max-width: 600px) {
   .hero-flex {
     flex-direction: column;
     gap: 1rem;
   }
+
   .hero-avatar-side {
     width: 80px;
     height: 80px;
   }
+
   .hero-flex h1 {
     font-size: 2rem;
   }
@@ -203,7 +239,7 @@ section li {
 section {
   margin-top: 1.5rem;
   padding: 1.7rem;
-  background-color: rgba(255,255,255,0.025);
+  background-color: rgba(255, 255, 255, 0.025);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 255, 255, 0.05);
   transition: all 0.3s ease;
@@ -253,7 +289,7 @@ a:hover {
 .animated-line {
   font-size: 1.2rem;
   color: #b2ebf2;
-  
+
   margin-top: 0.5rem;
   display: flex;
   justify-content: center;
@@ -264,4 +300,33 @@ a:hover {
   display: inline-block;
   min-width: 170px;
   text-align: left;
+}
+
+
+
+/**/
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.6rem 1rem;
+  }
+  .logo {
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.2rem;
+  }
+  .nav-links li {
+    margin-bottom: 0.2rem;
+  }
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.3rem 0.2rem;
+    display: block;
+    width: 100%;
+  }
 }

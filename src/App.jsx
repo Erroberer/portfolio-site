@@ -1,11 +1,29 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { TypeAnimation } from 'react-type-animation';
 
 const App = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [shrinkNav, setShrinkNav] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 250); // 250px aşağı inince göster
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShrinkNav(window.scrollY > 60); // 60 pikselden fazla scroll varsa true yap
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); // Temizlik
+  }, []);
+
   return (
     <div className="app-container">
-      <header className="navbar">
+      <header className={`navbar${shrinkNav ? ' shrinked' : ''}`}>
         <div className="logo">MFC</div>
         <nav>
           <ul className="nav-links">
@@ -96,12 +114,21 @@ const App = () => {
           <p>LinkedIn: <a href="https://www.linkedin.com/in/fatih-ceran-04890831b/">fatih-ceran</a></p>
         </section>
       </main>
-
+      {
+        showScrollTop && (
+          <button className="scroll-to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            ⬆️
+          </button>
+        )
+      }
       <footer className="footer">
         <p>&copy; 2025 Muhammet Fatih CERAN. Tüm hakları saklıdır.</p>
       </footer>
+
     </div>
+
   );
+
 };
 
 export default App;
