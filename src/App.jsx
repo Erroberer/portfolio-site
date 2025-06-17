@@ -78,13 +78,14 @@ const App = () => {
           <h3>💻 Yazılım Dilleri ve Teknolojiler</h3>
           <ul>
             <li><strong>C#:</strong> Temel - Orta düzey</li>
-            <li><strong>HTML & CSS:</strong> İleri düzey (projelerde aktif kullanıldı)</li>
+            <li><strong>HTML & CSS:</strong> İleri düzey </li>
             <li><strong>JavaScript:</strong> Orta - İleri düzey</li>
             <li><strong>C++:</strong> Orta - İleri düzey</li>
             <li><strong>Assembly:</strong> Temel düzey</li>
             <li><strong>React:</strong> Orta düzey</li>
             <li><strong>Node.js:</strong> Temel backend bilgisi</li>
-            <li><strong>jQuery:</strong> Orta - İleri düzey</li>
+            <li><strong>jQuery:</strong> Temel</li>
+            <li><strong>Yapay zeka ile verimlilik arttırma ve zaman tasarrufu:</strong> İleri düzey</li>
           </ul>
 
           <h3>🌍 Yabancı Dil</h3>
@@ -103,7 +104,7 @@ const App = () => {
         <section id="projeler">
           <h2>Projelerim</h2>
           <ul className="project-list">
-            <li className="project-card">Gizli Uygulama - Dijital demokrasi platformu</li>
+            
             <li className="project-card">Afterlife Bot - Kişilik tabanlı yapay zeka sohbet sistemi</li>
           </ul>
         </section>
