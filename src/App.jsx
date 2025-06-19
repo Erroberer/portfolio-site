@@ -103,10 +103,24 @@ const App = () => {
 
         <section id="projeler">
           <h2>Projelerim</h2>
-          <ul className="project-list">
-            
-            <li className="project-card">Afterlife Bot - Kişilik tabanlı yapay zeka sohbet sistemi</li>
-          </ul>
+
+          <div className="project-category">
+            <h3>Büyük Projeler</h3>
+            <ul className="project-list">
+              <li className="project-card">
+                Afterlife Bot – Kişilik tabanlı yapay zeka sohbet sistemi (maddi imkanlardan kaynaklı tamamlanamamıştır)
+              </li>
+              {/* Buraya başka büyük projelerin de eklenir */}
+            </ul>
+          </div>
+
+          <div className="project-category">
+            <h3>Küçük Projeler / Demo Çalışmaları</h3>
+            <ul className="project-list">
+
+              {/* Küçük başka örnekler ekle */}
+            </ul>
+          </div>
         </section>
 
         <section id="iletisim">
