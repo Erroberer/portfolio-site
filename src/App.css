@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
+/* TEMA 1 - Varsayılan */
+body, body.theme1 {
   margin: 0;
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -15,6 +18,678 @@ body {
     radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
   color: #ffffff;
   overflow-x: hidden;
+  transition: all 0.5s ease;
+}
+
+/* TEMA 2 - Cyberpunk Karanlık Teması */
+body.theme2 {
+  font-family: 'Orbitron', monospace;
+  background: #0a0a0a;
+  background-image: 
+    linear-gradient(135deg, rgba(255, 0, 96, 0.2) 0%, rgba(0, 255, 255, 0.2) 100%),
+    radial-gradient(circle at 30% 70%, rgba(255, 0, 96, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+  color: #ff0060;
+}
+
+/* TEMA 3 - Hacker */
+body.theme3 {
+  font-family: 'Fira Code', monospace;
+  background: #000000;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.2) 0%, transparent 50%),
+    linear-gradient(0deg, rgba(0, 255, 0, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
+  color: #00ff00;
+}
+
+/* TEMA 4 - Placeholder */
+body.theme4 {
+  background: #2c1810;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 69, 0, 0.2) 0%, transparent 50%);
+  color: #ffa500;
+}
+
+/* TEMA 5 - Placeholder */
+body.theme5 {
+  background: #1a1a2e;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(75, 0, 130, 0.2) 0%, transparent 50%);
+  color: #dda0dd;
+}
+
+/* TEMA 2 - Cyberpunk Özel Efektler */
+body.theme2 .navbar {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 0, 96, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 96, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+body.theme2 .logo {
+  background: linear-gradient(135deg, #ff0060 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(255, 0, 96, 0.5);
+  animation: cyberpunkGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes cyberpunkGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 0, 96, 0.5)); }
+  100% { filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8)); }
+}
+
+body.theme2 .nav-links a {
+  color: #ff0060;
+  border: 1px solid rgba(255, 0, 96, 0.4);
+  background: rgba(255, 0, 96, 0.1);
+}
+
+body.theme2 .nav-links a:hover {
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+body.theme2 .hero {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+  border: 1px solid rgba(255, 0, 96, 0.6);
+  box-shadow: 0 0 30px rgba(255, 0, 96, 0.4), 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+body.theme2 .hero-flex h1 {
+  background: linear-gradient(135deg, #ff0096 0%, #00ffff 50%, #ffff00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cyberpunkText 3s ease-in-out infinite;
+}
+
+@keyframes cyberpunkText {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 0, 150, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }
+}
+
+body.theme2 section {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+  border: 1px solid rgba(255, 0, 96, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 96, 0.2), 0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+/* TEMA 3 - Hacker Özel Efektler */
+body.theme3 .navbar {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+body.theme3 .logo {
+  background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Fira Code', monospace;
+  animation: hackerGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes hackerGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.5)); }
+  100% { filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8)); }
+}
+
+body.theme3 .nav-links a {
+  color: #00ff00;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  background: rgba(0, 255, 0, 0.1);
+  font-family: 'Fira Code', monospace;
+}
+
+body.theme3 .nav-links a:hover {
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+body.theme3 .hero {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+body.theme3 .hero-flex h1 {
+  background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Fira Code', monospace;
+  animation: hackerText 2s ease-in-out infinite;
+}
+
+@keyframes hackerText {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }
+}
+
+body.theme3 section {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+body.theme3 h2 {
+  background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Fira Code', monospace;
+}
+
+body.theme3 h3 {
+  color: #00ff00;
+  font-family: 'Fira Code', monospace;
+}
+
+body.theme3 h3::before {
+  background: linear-gradient(135deg, #00ff00, #00ffff);
+}
+
+/* TEMA 2 - Cyberpunk Ek Efektler */
+body.theme2 h2 {
+  background: linear-gradient(135deg, #ff0060 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 20px rgba(255, 0, 96, 0.5);
+}
+
+body.theme2 h3 {
+  color: #00ffff;
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+body.theme2 h3::before {
+  background: linear-gradient(135deg, #ff0060, #00ffff);
+}
+
+body.theme2 .project-card {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+  border-left: 4px solid;
+  border-image: linear-gradient(135deg, #ff0060, #00ffff) 1;
+  box-shadow: 0 0 20px rgba(255, 0, 96, 0.1);
+}
+
+body.theme2 .project-card:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 96, 0.3), 0 0 50px rgba(0, 255, 255, 0.2);
+}
+
+body.theme2 a {
+  color: #00ffff;
+}
+
+body.theme2 a:hover {
+  color: #ff0060;
+}
+
+body.theme2 a::after {
+  background: linear-gradient(135deg, #ff0060, #00ffff);
+}
+
+/* TEMA 3 - Hacker Ek Efektler */
+body.theme3 .project-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);
+  border-left: 4px solid;
+  border-image: linear-gradient(135deg, #00ff00, #00ffff) 1;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+body.theme3 .project-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+body.theme3 a {
+  color: #00ffff;
+}
+
+body.theme3 a:hover {
+  color: #00ff00;
+}
+
+body.theme3 a::after {
+  background: linear-gradient(135deg, #00ff00, #00ffff);
+}
+
+/* CSS Kodları Akan Efekt - Tema 3 için */
+body.theme3::before {
+  content: '/* Ana Stil Tanımları */\A body {\A   margin: 0;\A   padding: 0;\A   font-family: "Fira Code", monospace;\A   background: linear-gradient(135deg, #000000 0%, #001100 100%);\A   color: #00ff00;\A   overflow-x: hidden;\A }\A\A .container {\A   max-width: 1200px;\A   margin: 0 auto;\A   padding: 20px;\A   display: flex;\A   flex-direction: column;\A   min-height: 100vh;\A }\A\A /* Header Stilleri */\A .navbar {\A   background: rgba(0, 0, 0, 0.95);\A   backdrop-filter: blur(10px);\A   border: 1px solid #00ff00;\A   border-radius: 15px;\A   padding: 20px;\A   margin-bottom: 30px;\A   box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);\A   position: fixed;\A   top: 20px;\A   left: 50%;\A   transform: translateX(-50%);\A   z-index: 1000;\A }\A\A .nav-links {\A   list-style: none;\A   display: flex;\A   gap: 30px;\A   justify-content: center;\A   margin: 0;\A   padding: 0;\A }\A\A .nav-links a {\A   text-decoration: none;\A   color: #00ff00;\A   font-weight: 600;\A   padding: 10px 20px;\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   border-radius: 25px;\A   transition: all 0.3s ease;\A   position: relative;\A   overflow: hidden;\A   font-family: "Fira Code", monospace;\A }\A\A .nav-links a:hover {\A   background: rgba(0, 255, 0, 0.2);\A   color: #00ffff;\A   border-color: rgba(0, 255, 255, 0.5);\A   transform: translateY(-2px);\A   box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);\A }\A\A /* Hero Section */\A .hero {\A   display: flex;\A   align-items: center;\A   justify-content: center;\A   padding: 8rem 2rem 6rem;\A   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   border-radius: 30px;\A   box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);\A   margin-top: 100px;\A }\A\A .hero h1 {\A   font-size: 4rem;\A   font-weight: 900;\A   background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);\A   -webkit-background-clip: text;\A   -webkit-text-fill-color: transparent;\A   background-clip: text;\A   font-family: "Fira Code", monospace;\A   animation: hackerText 2s ease-in-out infinite;\A   text-align: center;\A }\A\A @keyframes hackerText {\A   0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5)); }\A   50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }\A }\A\A /* Project Cards */\A .project-card {\A   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);\A   border-left: 4px solid;\A   border-image: linear-gradient(135deg, #00ff00, #00ffff) 1;\A   border-radius: 16px;\A   padding: 2rem;\A   margin-bottom: 1.5rem;\A   box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);\A   transition: all 0.4s ease;\A }\A\A .project-card:hover {\A   transform: translateY(-8px) scale(1.02);\A   box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);\A }\A\A /* Links */\A a {\A   color: #00ffff;\A   text-decoration: none;\A   position: relative;\A   transition: all 0.3s ease;\A   font-weight: 500;\A }\A\A a::after {\A   content: "";\A   position: absolute;\A   bottom: -2px;\A   left: 0;\A   width: 0;\A   height: 2px;\A   background: linear-gradient(135deg, #00ff00, #00ffff);\A   transition: width 0.3s ease;\A }\A\A a:hover {\A   color: #00ff00;\A   transform: translateY(-1px);\A }\A\A a:hover::after {\A   width: 100%;\A }\A\A /* Theme Switcher */\A .theme-switcher {\A   position: fixed;\A   right: 20px;\A   top: 50%;\A   transform: translateY(-50%);\A   background: rgba(0, 0, 0, 0.95);\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   border-radius: 20px;\A   padding: 1.5rem 1rem;\A   z-index: 1001;\A   box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);\A }\A\A .theme-btn {\A   background: rgba(0, 255, 0, 0.1);\A   border: 1px solid rgba(0, 255, 255, 0.3);\A   color: #00ff00;\A   padding: 0.7rem 0.8rem;\A   border-radius: 12px;\A   cursor: pointer;\A   font-size: 0.8rem;\A   font-weight: 500;\A   transition: all 0.3s ease;\A   font-family: "Fira Code", monospace;\A   width: 100%;\A   margin-bottom: 0.5rem;\A }\A\A .theme-btn:hover {\A   background: rgba(0, 255, 0, 0.2);\A   border-color: rgba(0, 255, 255, 0.5);\A   box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);\A }\A\A .theme-btn.active {\A   background: linear-gradient(135deg, #00ff00, #00ffff);\A   border-color: rgba(0, 255, 255, 0.7);\A   color: #000000;\A   box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);\A }\A\A /* Animations */\A @keyframes glow {\A   0% { box-shadow: 0 0 5px #00ff00; }\A   100% { box-shadow: 0 0 20px #00ff00, 0 0 30px #00ffff; }\A }\A\A .logo {\A   animation: glow 2s infinite alternate;\A   font-family: "Fira Code", monospace;\A }\A\A /* Sections */\A section {\A   padding: 3rem;\A   margin: 3rem 2rem;\A   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   border-radius: 24px;\A   box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);\A }\A\A h2 {\A   background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);\A   -webkit-background-clip: text;\A   -webkit-text-fill-color: transparent;\A   background-clip: text;\A   font-family: "Fira Code", monospace;\A }\A\A h3 {\A   color: #00ff00;\A   font-family: "Fira Code", monospace;\A }\A\A /* Footer */\A footer {\A   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   color: #00ff00;\A   text-align: center;\A   padding: 3rem;\A   margin: 4rem 2rem 2rem;\A   border-radius: 24px;\A }\A\A /* Responsive Design */\A @media (max-width: 768px) {\A   .hero {\A     padding: 6rem 1rem 4rem;\A     margin-top: 80px;\A   }\A   .hero h1 {\A     font-size: 2.5rem;\A   }\A   .navbar {\A     width: calc(100% - 40px);\A     padding: 0.8rem 1.5rem;\A   }\A   section {\A     margin: 2rem 1rem;\A     padding: 2rem;\A   }\A   .theme-switcher {\A     display: none;\A   }\A }\A\A @media (max-width: 480px) {\A   .hero h1 {\A     font-size: 2rem;\A   }\A   .project-card {\A     padding: 1.5rem;\A   }\A   section {\A     padding: 1.5rem;\A   }\A }';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(0, 255, 0, 0.2);
+  white-space: pre-wrap;
+  word-spacing: 0.2rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: cssCodeFlow 30s linear infinite;
+  overflow: hidden;
+}
+
+body.theme3::after {
+  content: '/* Modern CSS Framework - Advanced Styles */\A\A :root {\A   --primary-green: #00ff00;\A   --secondary-cyan: #00ffff;\A   --accent-pink: #ff0080;\A   --dark-bg: #000000;\A   --light-bg: #001100;\A   --border-radius: 12px;\A   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\A   --shadow-glow: 0 0 20px rgba(0, 255, 0, 0.3);\A }\A\A /* Base Styles */\A * {\A   margin: 0;\A   padding: 0;\A   box-sizing: border-box;\A }\A\A body {\A   font-family: "Fira Code", "Courier New", monospace;\A   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);\A   color: var(--primary-green);\A   line-height: 1.6;\A   overflow-x: hidden;\A }\A\A /* Container System */\A .container {\A   max-width: 1400px;\A   margin: 0 auto;\A   padding: 0 2rem;\A }\A\A .container-fluid {\A   width: 100%;\A   padding: 0 1rem;\A }\A\A /* Flexbox Utilities */\A .flex {\A   display: flex;\A }\A\A .flex-col {\A   flex-direction: column;\A }\A\A .flex-wrap {\A   flex-wrap: wrap;\A }\A\A .justify-center {\A   justify-content: center;\A }\A\A .justify-between {\A   justify-content: space-between;\A }\A\A .items-center {\A   align-items: center;\A }\A\A .items-stretch {\A   align-items: stretch;\A }\A\A /* Grid System */\A .grid {\A   display: grid;\A   gap: 2rem;\A }\A\A .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }\A .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }\A .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }\A .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }\A\A .grid-auto-fit {\A   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\A }\A\A .grid-auto-fill {\A   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\A }\A\A /* Button Components */\A .btn {\A   display: inline-flex;\A   align-items: center;\A   justify-content: center;\A   padding: 0.75rem 1.5rem;\A   border: 1px solid var(--primary-green);\A   background: rgba(0, 255, 0, 0.1);\A   color: var(--primary-green);\A   text-decoration: none;\A   border-radius: var(--border-radius);\A   font-family: inherit;\A   font-weight: 600;\A   cursor: pointer;\A   transition: var(--transition);\A   position: relative;\A   overflow: hidden;\A }\A\A .btn::before {\A   content: "";\A   position: absolute;\A   top: 0;\A   left: -100%;\A   width: 100%;\A   height: 100%;\A   background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);\A   transition: left 0.5s;\A }\A\A .btn:hover::before {\A   left: 100%;\A }\A\A .btn:hover {\A   transform: translateY(-3px);\A   box-shadow: var(--shadow-glow);\A   border-color: var(--secondary-cyan);\A   color: var(--secondary-cyan);\A }\A\A .btn-primary {\A   background: linear-gradient(135deg, var(--primary-green), var(--secondary-cyan));\A   color: var(--dark-bg);\A   border: none;\A }\A\A .btn-secondary {\A   background: rgba(0, 255, 255, 0.1);\A   border-color: var(--secondary-cyan);\A   color: var(--secondary-cyan);\A }\A\A .btn-accent {\A   background: rgba(255, 0, 128, 0.1);\A   border-color: var(--accent-pink);\A   color: var(--accent-pink);\A }\A\A /* Card Components */\A .card {\A   background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 0, 0.8));\A   border: 1px solid rgba(0, 255, 0, 0.3);\A   border-radius: var(--border-radius);\A   padding: 2rem;\A   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);\A   backdrop-filter: blur(10px);\A   transition: var(--transition);\A   position: relative;\A   overflow: hidden;\A }\A\A .card::before {\A   content: "";\A   position: absolute;\A   top: 0;\A   left: 0;\A   right: 0;\A   height: 2px;\A   background: linear-gradient(90deg, var(--primary-green), var(--secondary-cyan), var(--accent-pink));\A   opacity: 0;\A   transition: opacity 0.3s;\A }\A\A .card:hover::before {\A   opacity: 1;\A }\A\A .card:hover {\A   transform: translateY(-8px) scale(1.02);\A   box-shadow: var(--shadow-glow), 0 16px 64px rgba(0, 0, 0, 0.4);\A   border-color: var(--secondary-cyan);\A }\A\A /* Typography */\A .text-xs { font-size: 0.75rem; }\A .text-sm { font-size: 0.875rem; }\A .text-base { font-size: 1rem; }\A .text-lg { font-size: 1.125rem; }\A .text-xl { font-size: 1.25rem; }\A .text-2xl { font-size: 1.5rem; }\A .text-3xl { font-size: 1.875rem; }\A .text-4xl { font-size: 2.25rem; }\A .text-5xl { font-size: 3rem; }\A\A .font-light { font-weight: 300; }\A .font-normal { font-weight: 400; }\A .font-medium { font-weight: 500; }\A .font-semibold { font-weight: 600; }\A .font-bold { font-weight: 700; }\A .font-black { font-weight: 900; }\A\A .text-center { text-align: center; }\A .text-left { text-align: left; }\A .text-right { text-align: right; }\A\A /* Color Utilities */\A .text-green { color: var(--primary-green); }\A .text-cyan { color: var(--secondary-cyan); }\A .text-pink { color: var(--accent-pink); }\A .text-white { color: #ffffff; }\A .text-gray { color: #888888; }\A\A .bg-dark { background-color: var(--dark-bg); }\A .bg-light { background-color: var(--light-bg); }\A .bg-green { background-color: var(--primary-green); }\A .bg-cyan { background-color: var(--secondary-cyan); }\A\A /* Border Utilities */\A .border { border: 1px solid rgba(0, 255, 0, 0.3); }\A .border-green { border-color: var(--primary-green); }\A .border-cyan { border-color: var(--secondary-cyan); }\A .border-pink { border-color: var(--accent-pink); }\A\A .border-t { border-top: 1px solid rgba(0, 255, 0, 0.3); }\A .border-b { border-bottom: 1px solid rgba(0, 255, 0, 0.3); }\A .border-l { border-left: 1px solid rgba(0, 255, 0, 0.3); }\A .border-r { border-right: 1px solid rgba(0, 255, 0, 0.3); }\A\A /* Spacing Utilities */\A .m-0 { margin: 0; }\A .m-1 { margin: 0.25rem; }\A .m-2 { margin: 0.5rem; }\A .m-3 { margin: 0.75rem; }\A .m-4 { margin: 1rem; }\A .m-5 { margin: 1.25rem; }\A .m-6 { margin: 1.5rem; }\A .m-8 { margin: 2rem; }\A .m-10 { margin: 2.5rem; }\A .m-12 { margin: 3rem; }\A\A .mt-0 { margin-top: 0; }\A .mt-1 { margin-top: 0.25rem; }\A .mt-2 { margin-top: 0.5rem; }\A .mt-4 { margin-top: 1rem; }\A .mt-6 { margin-top: 1.5rem; }\A .mt-8 { margin-top: 2rem; }\A .mt-10 { margin-top: 2.5rem; }\A\A .mb-0 { margin-bottom: 0; }\A .mb-1 { margin-bottom: 0.25rem; }\A .mb-2 { margin-bottom: 0.5rem; }\A .mb-4 { margin-bottom: 1rem; }\A .mb-6 { margin-bottom: 1.5rem; }\A .mb-8 { margin-bottom: 2rem; }\A .mb-10 { margin-bottom: 2.5rem; }\A\A .p-0 { padding: 0; }\A .p-1 { padding: 0.25rem; }\A .p-2 { padding: 0.5rem; }\A .p-3 { padding: 0.75rem; }\A .p-4 { padding: 1rem; }\A .p-5 { padding: 1.25rem; }\A .p-6 { padding: 1.5rem; }\A .p-8 { padding: 2rem; }\A .p-10 { padding: 2.5rem; }\A .p-12 { padding: 3rem; }\A\A /* Animation Classes */\A .animate-pulse {\A   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;\A }\A\A .animate-bounce {\A   animation: bounce 1s infinite;\A }\A\A .animate-spin {\A   animation: spin 1s linear infinite;\A }\A\A .animate-fade-in {\A   animation: fadeIn 0.6s ease-in;\A }\A\A .animate-slide-up {\A   animation: slideUp 0.8s ease-out;\A }\A\A .animate-glow {\A   animation: glow 2s ease-in-out infinite alternate;\A }\A\A /* Keyframe Animations */\A @keyframes pulse {\A   0%, 100% { opacity: 1; }\A   50% { opacity: 0.5; }\A }\A\A @keyframes bounce {\A   0%, 20%, 53%, 80%, 100% { transform: translate3d(0, 0, 0); }\A   40%, 43% { transform: translate3d(0, -30px, 0); }\A   70% { transform: translate3d(0, -15px, 0); }\A   90% { transform: translate3d(0, -4px, 0); }\A }\A\A @keyframes spin {\A   from { transform: rotate(0deg); }\A   to { transform: rotate(360deg); }\A }\A\A @keyframes fadeIn {\A   from { opacity: 0; transform: translateY(20px); }\A   to { opacity: 1; transform: translateY(0); }\A }\A\A @keyframes slideUp {\A   from { transform: translateY(100px); opacity: 0; }\A   to { transform: translateY(0); opacity: 1; }\A }\A\A @keyframes glow {\A   from { box-shadow: 0 0 5px var(--primary-green); }\A   to { box-shadow: 0 0 20px var(--primary-green), 0 0 30px var(--secondary-cyan); }\A }\A\A /* Responsive Utilities */\A .hidden { display: none; }\A .block { display: block; }\A .inline { display: inline; }\A .inline-block { display: inline-block; }\A .flex { display: flex; }\A .grid { display: grid; }\A\A /* Position Utilities */\A .relative { position: relative; }\A .absolute { position: absolute; }\A .fixed { position: fixed; }\A .sticky { position: sticky; }\A\A .top-0 { top: 0; }\A .right-0 { right: 0; }\A .bottom-0 { bottom: 0; }\A .left-0 { left: 0; }\A\A /* Z-index Utilities */\A .z-0 { z-index: 0; }\A .z-10 { z-index: 10; }\A .z-20 { z-index: 20; }\A .z-30 { z-index: 30; }\A .z-40 { z-index: 40; }\A .z-50 { z-index: 50; }\A\A /* Overflow Utilities */\A .overflow-hidden { overflow: hidden; }\A .overflow-auto { overflow: auto; }\A .overflow-scroll { overflow: scroll; }\A\A /* Width and Height */\A .w-full { width: 100%; }\A .w-1\/2 { width: 50%; }\A .w-1\/3 { width: 33.333333%; }\A .w-2\/3 { width: 66.666667%; }\A .w-1\/4 { width: 25%; }\A .w-3\/4 { width: 75%; }\A\A .h-full { height: 100%; }\A .h-screen { height: 100vh; }\A .h-64 { height: 16rem; }\A .h-32 { height: 8rem; }\A .h-16 { height: 4rem; }\A\A /* Responsive Breakpoints */\A @media (max-width: 640px) {\A   .sm\\:hidden { display: none; }\A   .sm\\:block { display: block; }\A   .sm\\:text-sm { font-size: 0.875rem; }\A   .sm\\:p-2 { padding: 0.5rem; }\A   .sm\\:m-2 { margin: 0.5rem; }\A }\A\A @media (max-width: 768px) {\A   .md\\:hidden { display: none; }\A   .md\\:block { display: block; }\A   .md\\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }\A   .md\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }\A   .md\\:text-base { font-size: 1rem; }\A   .md\\:p-4 { padding: 1rem; }\A }\A\A @media (max-width: 1024px) {\A   .lg\\:hidden { display: none; }\A   .lg\\:block { display: block; }\A   .lg\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }\A   .lg\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }\A   .lg\\:text-lg { font-size: 1.125rem; }\A }\A\A @media (min-width: 1280px) {\A   .xl\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }\A   .xl\\:text-xl { font-size: 1.25rem; }\A   .xl\\:p-8 { padding: 2rem; }\A }';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(0, 255, 0, 0.25);
+  white-space: pre-wrap;
+  word-spacing: 0.2rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: cssCodeFlow 40s linear infinite reverse;
+  overflow: hidden;
+}
+
+@keyframes cssCodeFlow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Cyberpunk Glitch Efekti - Tema 2 için */
+body.theme2 .hero-flex h1::before {
+  content: 'Ben Fatih';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff0096 0%, #00ffff 50%, #ffff00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glitch 4s infinite;
+  z-index: -1;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* TEMA 4 - Kovboy Teması */
+body.theme4 {
+  font-family: 'Georgia', serif;
+  background: #2c1810;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(139, 69, 19, 0.1) 0%, rgba(160, 82, 45, 0.1) 100%);
+  color: #daa520;
+}
+
+/* Kovboy Arka Plan Efektleri */
+body.theme4::before {
+  content: '🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 140%;
+  font-size: 24px;
+  line-height: 3;
+  color: rgba(218, 165, 32, 0.2);
+  white-space: pre-wrap;
+  word-spacing: 2rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: cowboyDrift 25s linear infinite;
+  overflow: hidden;
+}
+
+body.theme4::after {
+  content: '🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄 🌾 🔫 🐄';
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 120%;
+  height: 120%;
+  font-size: 20px;
+  line-height: 4;
+  color: rgba(160, 82, 45, 0.15);
+  white-space: pre-wrap;
+  word-spacing: 3rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: cowboyDrift 30s linear infinite reverse;
+  overflow: hidden;
+}
+
+@keyframes cowboyDrift {
+  0% { transform: translateX(-100%) translateY(-50%) rotate(0deg); }
+  100% { transform: translateX(100vw) translateY(50%) rotate(360deg); }
+}
+
+body.theme4 .navbar {
+  background: rgba(44, 24, 16, 0.9);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  box-shadow: 0 0 20px rgba(218, 165, 32, 0.2);
+}
+
+body.theme4 .logo {
+  background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+body.theme4 .nav-links a {
+  color: #daa520;
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  background: rgba(139, 69, 19, 0.2);
+  font-family: 'Georgia', serif;
+}
+
+body.theme4 .hero {
+  background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(139, 69, 19, 0.8) 100%);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+  box-shadow: 0 0 30px rgba(218, 165, 32, 0.2);
+}
+
+body.theme4 h2 {
+  background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Georgia', serif;
+}
+
+body.theme4 section {
+  background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(139, 69, 19, 0.8) 100%);
+  border: 1px solid rgba(218, 165, 32, 0.4);
+}
+
+/* TEMA 5 - Anime Teması */
+body.theme5 {
+  font-family: 'Inter', sans-serif;
+  background: #1a1a2e;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(221, 160, 221, 0.2) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(255, 182, 193, 0.1) 0%, rgba(173, 216, 230, 0.1) 100%);
+  color: #ffb6c1;
+}
+
+/* Anime Arka Plan Efektleri - Uçan Anime Görselleri */
+body.theme5::before {
+  content: '👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟 👧🏻 🧚🏻‍♀️ 🦄 🌟';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 140%;
+  font-size: 28px;
+  line-height: 2.5;
+  color: rgba(255, 182, 193, 0.3);
+  white-space: pre-wrap;
+  word-spacing: 1.5rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: animeFloat 20s ease-in-out infinite;
+  overflow: hidden;
+}
+
+body.theme5::after {
+  content: '🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀 🌸 ✨ 💫 🎀';
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 120%;
+  height: 120%;
+  font-size: 22px;
+  line-height: 3.5;
+  color: rgba(173, 216, 230, 0.25);
+  white-space: pre-wrap;
+  word-spacing: 2rem;
+  pointer-events: none;
+  z-index: -1;
+  animation: animeFloat 25s ease-in-out infinite reverse;
+  overflow: hidden;
+}
+
+@keyframes animeFloat {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  25% { transform: translateY(-20px) translateX(10px) rotate(2deg); }
+  50% { transform: translateY(-10px) translateX(-5px) rotate(-1deg); }
+  75% { transform: translateY(-30px) translateX(15px) rotate(3deg); }
+}
+
+/* Anime Uçan Karakterler Efekti */
+body.theme5 .hero::before {
+  content: '🧚🏻‍♀️';
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  font-size: 40px;
+  color: rgba(255, 182, 193, 0.4);
+  animation: animeCharacterFly 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+body.theme5 .hero::after {
+  content: '🦄';
+  position: absolute;
+  top: -10%;
+  right: 20%;
+  font-size: 35px;
+  color: rgba(173, 216, 230, 0.4);
+  animation: animeCharacterFly 15s ease-in-out infinite 3s;
+  z-index: 0;
+}
+
+@keyframes animeCharacterFly {
+  0% { transform: translateY(-50px) translateX(-30px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  25% { transform: translateY(20px) translateX(40px) rotate(10deg); }
+  50% { transform: translateY(-10px) translateX(-20px) rotate(-5deg); }
+  75% { transform: translateY(30px) translateX(60px) rotate(15deg); }
+  90% { opacity: 1; }
+  100% { transform: translateY(-80px) translateX(-40px) rotate(0deg); opacity: 0; }
+}
+
+/* Ek Anime Karakterleri */
+body.theme5 section::before {
+  content: '👧🏻';
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: rgba(255, 182, 193, 0.3);
+  animation: animeCharacterFloat 18s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes animeCharacterFloat {
+  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+  25% { transform: translateY(-15px) translateX(20px) rotate(5deg); }
+  50% { transform: translateY(10px) translateX(-15px) rotate(-3deg); }
+  75% { transform: translateY(-20px) translateX(25px) rotate(8deg); }
+}
+
+body.theme5 .navbar {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.2), 0 0 40px rgba(173, 216, 230, 0.1);
+}
+
+body.theme5 .logo {
+  background: linear-gradient(135deg, #ffb6c1 0%, #add8e6 50%, #dda0dd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: animeGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes animeGlow {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.5)); }
+  100% { filter: drop-shadow(0 0 15px rgba(173, 216, 230, 0.8)); }
+}
+
+body.theme5 .nav-links a {
+  color: #ffb6c1;
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  background: rgba(255, 182, 193, 0.1);
+}
+
+body.theme5 .nav-links a:hover {
+  color: #add8e6;
+  border-color: rgba(173, 216, 230, 0.6);
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+}
+
+body.theme5 .hero {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(46, 26, 66, 0.8) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme5 .hero-flex h1 {
+  background: linear-gradient(135deg, #ffb6c1 0%, #add8e6 50%, #dda0dd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: animeTextShine 4s ease-in-out infinite;
+}
+
+@keyframes animeTextShine {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(173, 216, 230, 0.8)); }
+}
+
+body.theme5 h2 {
+  background: linear-gradient(135deg, #ffb6c1 0%, #add8e6 50%, #dda0dd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.theme5 h3 {
+  color: #ffb6c1;
+}
+
+body.theme5 h3::before {
+  background: linear-gradient(135deg, #ffb6c1, #add8e6);
+}
+
+body.theme5 section {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(46, 26, 66, 0.8) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+}
+
+body.theme5 .project-card {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(46, 26, 66, 0.8) 100%);
+  border-left: 4px solid;
+  border-image: linear-gradient(135deg, #ffb6c1, #add8e6) 1;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.1);
+}
+
+body.theme5 .project-card:hover {
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+}
+
+body.theme5 a {
+  color: #add8e6;
+}
+
+body.theme5 a:hover {
+  color: #ffb6c1;
+}
+
+body.theme5 a::after {
+  background: linear-gradient(135deg, #ffb6c1, #add8e6);
+}
+
+/* Footer tema stilleri */
+body.theme2 .footer {
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(25, 25, 25, 0.9) 100%);
+  border: 1px solid rgba(252, 227, 3, 0.3);
+  color: #fcf3e3;
+}
+
+body.theme2 .scroll-to-top {
+  background: linear-gradient(135deg, rgba(252, 227, 3, 0.9), rgba(252, 227, 3, 0.9));
+  border: 1px solid rgba(252, 227, 3, 0.4);
+  color: #0f0f0f;
+}
+
+body.theme2 .scroll-to-top:hover {
+  background: linear-gradient(135deg, rgba(252, 227, 3, 1), rgba(252, 227, 3, 1));
+  box-shadow: 0 0 20px rgba(252, 227, 3, 0.5);
+}
+
+body.theme3 .footer {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 20, 0, 0.9) 100%);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  color: #00ff00;
+}
+
+body.theme4 .footer {
+  background: linear-gradient(135deg, rgba(44, 24, 16, 0.9) 0%, rgba(64, 34, 20, 0.9) 100%);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  color: #ffa500;
+}
+
+body.theme5 .footer {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(46, 26, 66, 0.8) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  color: #ffb6c1;
+  box-shadow: 0 -5px 20px rgba(255, 182, 193, 0.1);
+}
+
+body.theme5 .scroll-to-top {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(173, 216, 230, 0.9));
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  color: #1a1a2e;
+}
+
+body.theme5 .scroll-to-top:hover {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 1), rgba(173, 216, 230, 1));
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
 }
 
 .app-container {
@@ -675,12 +1350,620 @@ a:hover::after {
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(30, 30, 30, 0.95) 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu .nav-links {
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mobile-menu .nav-links a {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.mobile-menu .theme-switcher {
+  position: static;
+  margin-top: 2rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.mobile-menu .theme-switcher h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.mobile-menu .theme-btn {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive tasarım */
 @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .theme-switcher {
+    display: none;
+  }
+  
+  .hero {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .hero-flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-avatar-side {
+    order: -1;
+  }
+  
+  .hero-avatar-side img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .scroll-to-top {
     right: 20px;
     bottom: 20px;
     width: 48px;
     height: 48px;
     font-size: 1.3rem;
+  }
+}
+
+/* TEMA DEĞİŞTİRİCİ PANEL */
+.theme-switcher {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.theme-switcher h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* TEMA 2 - Cyberpunk 2077 Tema Değiştirici */
+body.theme2 .theme-switcher {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 0, 96, 0.6);
+  box-shadow: 0 0 20px rgba(255, 0, 96, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+body.theme2 .theme-switcher h4 {
+  background: linear-gradient(135deg, #ff0060 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(255, 0, 96, 0.5);
+}
+
+body.theme2 .theme-btn {
+  background: rgba(255, 0, 96, 0.1);
+  border: 1px solid rgba(255, 0, 96, 0.4);
+  color: #ff0060;
+}
+
+body.theme2 .theme-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  color: #00ffff;
+}
+
+body.theme2 .theme-btn.active {
+  background: linear-gradient(135deg, rgba(255, 0, 96, 0.3), rgba(0, 255, 255, 0.3));
+  border-color: rgba(0, 255, 255, 0.8);
+  color: #00ffff;
+  box-shadow: 0 0 25px rgba(255, 0, 96, 0.5), 0 0 35px rgba(0, 255, 255, 0.4);
+}
+
+/* TEMA 3 - Hacker Tema Değiştirici */
+body.theme3 .theme-switcher {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+body.theme3 .theme-btn {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  color: #00ff00;
+  font-family: 'Fira Code', monospace;
+}
+
+body.theme3 .theme-btn:hover {
+  background: rgba(0, 255, 0, 0.2);
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+body.theme3 .theme-btn.active {
+  background: linear-gradient(135deg, #00ff00, #00ffff);
+  border-color: rgba(0, 255, 255, 0.7);
+  color: #000000;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+}
+
+/* TEMA 4 - Turuncu Tema Değiştirici */
+body.theme4 .theme-switcher {
+  background: rgba(44, 24, 16, 0.9);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+}
+
+body.theme4 .theme-btn {
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  color: #ffa500;
+}
+
+body.theme4 .theme-btn:hover {
+  background: rgba(255, 140, 0, 0.2);
+  border-color: rgba(255, 140, 0, 0.5);
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+}
+
+body.theme4 .theme-btn.active {
+  background: linear-gradient(135deg, #ffa500, #ff4500);
+  border-color: rgba(255, 69, 0, 0.5);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.5);
+}
+
+/* TEMA 5 - Anime Tema Değiştirici */
+body.theme5 .theme-switcher {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(46, 26, 66, 0.95) 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.2), 0 0 40px rgba(173, 216, 230, 0.1);
+}
+
+body.theme5 .theme-switcher h4 {
+  background: linear-gradient(135deg, #ffb6c1 0%, #add8e6 50%, #dda0dd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.theme5 .theme-btn {
+  background: rgba(255, 182, 193, 0.2);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  color: #ffb6c1;
+}
+
+body.theme5 .theme-btn:hover {
+  background: rgba(255, 182, 193, 0.4);
+  border-color: rgba(255, 182, 193, 0.5);
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+  color: #add8e6;
+}
+
+body.theme5 .theme-btn.active {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
+  border-color: rgba(173, 216, 230, 0.6);
+  color: #add8e6;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.5);
+}
+
+/* Mobil Menü Stilleri */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-btn .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mobile-menu {
+  background: var(--bg-color);
+  width: 280px;
+  height: 100%;
+  padding: 2rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  animation: slideIn 0.3s ease forwards;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-header h3 {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav li {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  color: var(--accent-color);
+  padding-left: 1rem;
+}
+
+.mobile-theme-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 140px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 1rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-theme-switcher h4 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.mobile-theme-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-theme-buttons .theme-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  margin-bottom: 0.4rem;
+}
+
+.mobile-theme-buttons .theme-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.mobile-theme-buttons .theme-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Tema-spesifik mobil menü buton stilleri */
+body.theme1 .mobile-menu-btn {
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.theme2 .mobile-menu-btn {
+  color: #ff0060;
+  border: 1px solid rgba(255, 0, 96, 0.4);
+  background: rgba(255, 0, 96, 0.1);
+}
+
+body.theme2 .mobile-menu-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+body.theme3 .mobile-menu-btn {
+  color: #00ff00;
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  background: rgba(0, 255, 0, 0.1);
+}
+
+body.theme4 .mobile-menu-btn {
+  color: #8B4513;
+  border: 1px solid rgba(139, 69, 19, 0.4);
+  background: rgba(139, 69, 19, 0.1);
+}
+
+body.theme5 .mobile-menu-btn {
+  color: #ffb6c1;
+  border: 1px solid rgba(255, 182, 193, 0.4);
+  background: rgba(255, 182, 193, 0.1);
+}
+
+/* Tema-spesifik mobil tema butonları */
+body.theme1 .mobile-theme-buttons .theme-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme1 .mobile-theme-buttons .theme-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+body.theme2 .mobile-theme-buttons .theme-btn {
+  background: rgba(255, 0, 96, 0.1);
+  color: #ff0060;
+  border-color: rgba(255, 0, 96, 0.3);
+}
+
+body.theme2 .mobile-theme-buttons .theme-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+body.theme3 .mobile-theme-buttons .theme-btn {
+  background: rgba(0, 255, 0, 0.1);
+  color: #00ff00;
+  border-color: rgba(0, 255, 0, 0.3);
+}
+
+body.theme3 .mobile-theme-buttons .theme-btn:hover {
+  background: rgba(0, 255, 0, 0.2);
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+body.theme4 .mobile-theme-buttons .theme-btn {
+  background: rgba(139, 69, 19, 0.1);
+  color: #8B4513;
+  border-color: rgba(139, 69, 19, 0.3);
+}
+
+body.theme4 .mobile-theme-buttons .theme-btn:hover {
+  background: rgba(139, 69, 19, 0.2);
+  border-color: rgba(139, 69, 19, 0.5);
+}
+
+body.theme5 .mobile-theme-buttons .theme-btn {
+  background: rgba(255, 182, 193, 0.1);
+  color: #ffb6c1;
+  border-color: rgba(255, 182, 193, 0.3);
+}
+
+body.theme5 .mobile-theme-buttons .theme-btn:hover {
+  background: rgba(255, 182, 193, 0.2);
+  border-color: rgba(255, 182, 193, 0.5);
+}
+
+@media (max-width: 768px) {
+  .theme-switcher {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    position: relative;
+    z-index: 1002;
+    font-size: 1.8rem;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-weight: bold;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .navbar {
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .navbar {
+    padding: 1rem 1rem;
   }
 }

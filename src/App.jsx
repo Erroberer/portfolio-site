@@ -6,6 +6,8 @@ import { TypeAnimation } from 'react-type-animation';
 const App = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [shrinkNav, setShrinkNav] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('theme1');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 250); // 250px aşağı inince göster
@@ -21,11 +23,82 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll); // Temizlik
   }, []);
 
+  const changeTheme = (theme) => {
+    setCurrentTheme(theme);
+    document.body.className = theme;
+    setMobileMenuOpen(false); // Tema değiştiğinde menüyü kapat
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    document.body.className = currentTheme;
+  }, [currentTheme]);
+
+  // Mobil menü açıkken body scroll'unu engelle
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${currentTheme}`}>
+      {/* Tema Değiştirici Panel */}
+      <div className="theme-switcher">
+        <h4>Tasarımlar</h4>
+        <button 
+          className={`theme-btn ${currentTheme === 'theme1' ? 'active' : ''}`}
+          onClick={() => changeTheme('theme1')}
+        >
+          Tasarım 1
+        </button>
+        <button 
+          className={`theme-btn ${currentTheme === 'theme2' ? 'active' : ''}`}
+          onClick={() => changeTheme('theme2')}
+        >
+          Tasarım 2
+        </button>
+        <button 
+          className={`theme-btn ${currentTheme === 'theme3' ? 'active' : ''}`}
+          onClick={() => changeTheme('theme3')}
+        >
+          Tasarım 3
+        </button>
+        <button 
+          className={`theme-btn ${currentTheme === 'theme4' ? 'active' : ''}`}
+          onClick={() => changeTheme('theme4')}
+        >
+          Tasarım 4
+        </button>
+        <button 
+          className={`theme-btn ${currentTheme === 'theme5' ? 'active' : ''}`}
+          onClick={() => changeTheme('theme5')}
+        >
+          Tasarım 5
+        </button>
+      </div>
+
       <header className={`navbar${shrinkNav ? ' shrinked' : ''}`}>
         <div className="logo">MFC</div>
-        <nav>
+        
+        {/* Mobil Menü Butonu */}
+        <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+          <span className="arrow">→</span>
+        </button>
+        
+        <nav className="desktop-nav">
           <ul className="nav-links">
             <li><a href="#anamenu">Ana Menü</a></li>
             <li><a href="#hakkimda">Hakkımda</a></li>
@@ -34,6 +107,63 @@ const App = () => {
           </ul>
         </nav>
       </header>
+      
+      {/* Mobil Menü Overlay */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay" onClick={closeMobileMenu}>
+          <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+            <div className="mobile-menu-header">
+              <h3>Menü</h3>
+              <button className="close-btn" onClick={closeMobileMenu}>×</button>
+            </div>
+            <nav className="mobile-nav">
+              <ul>
+                <li><a href="#anamenu" onClick={closeMobileMenu}>Ana Menü</a></li>
+                <li><a href="#hakkimda" onClick={closeMobileMenu}>Hakkımda</a></li>
+                <li><a href="#projeler" onClick={closeMobileMenu}>Projelerim</a></li>
+                <li><a href="#iletisim" onClick={closeMobileMenu}>İletişim</a></li>
+              </ul>
+            </nav>
+            
+            {/* Mobil Tema Değiştirici */}
+            <div className="mobile-theme-switcher">
+              <h4>Tasarımlar</h4>
+              <div className="mobile-theme-buttons">
+                <button 
+                  className={`theme-btn ${currentTheme === 'theme1' ? 'active' : ''}`}
+                  onClick={() => changeTheme('theme1')}
+                >
+                  Tasarım 1
+                </button>
+                <button 
+                  className={`theme-btn ${currentTheme === 'theme2' ? 'active' : ''}`}
+                  onClick={() => changeTheme('theme2')}
+                >
+                  Tasarım 2
+                </button>
+                <button 
+                  className={`theme-btn ${currentTheme === 'theme3' ? 'active' : ''}`}
+                  onClick={() => changeTheme('theme3')}
+                >
+                  Tasarım 3
+                </button>
+                <button 
+                  className={`theme-btn ${currentTheme === 'theme4' ? 'active' : ''}`}
+                  onClick={() => changeTheme('theme4')}
+                >
+                  Tasarım 4
+                </button>
+                <button 
+                  className={`theme-btn ${currentTheme === 'theme5' ? 'active' : ''}`}
+                  onClick={() => changeTheme('theme5')}
+                >
+                  Tasarım 5
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <main>
         <div className="hero">
