@@ -169,11 +169,7 @@ const App = () => {
         <div className="hero">
           <div className="hero-flex">
             <h1>Ben Fatih</h1>
-            <img
-              src="/ppimage.jpg"
-              alt="Fatih Ceran Profil Fotoğrafı"
-              className="hero-avatar-side"
-            />
+      
           </div>
           <p className="hero-desc">
             Teknoloji tutkunu bir&nbsp;
@@ -257,6 +253,72 @@ const App = () => {
           <h2>İletişim</h2>
           <p>Email: <a href="mailto:ceranfatih608@gmail.com">ceranfatih608@gmail.com</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/fatih-ceran-04890831b/">fatih-ceran</a></p>
+          <div className="phone-container" onMouseMove={(e) => {
+            const container = e.currentTarget;
+            const btn = container.querySelector('.escaping-phone-btn');
+            if (!btn) return;
+            
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+            
+            // Mouse pozisyonunu container'a göre hesapla
+            const mouseX = e.clientX - containerRect.left;
+            const mouseY = e.clientY - containerRect.top;
+            
+            // Butonun mevcut pozisyonunu CSS değerlerinden al (eğer set edilmişse)
+            let btnX = parseFloat(btn.style.left) || (containerRect.width / 2 - btnRect.width / 2);
+            let btnY = parseFloat(btn.style.top) || (containerRect.height / 2 - btnRect.height / 2);
+            
+            // Buton merkezini hesapla
+            const btnCenterX = btnX + btnRect.width / 5;
+            const btnCenterY = btnY + btnRect.height / 5;
+            
+            // Mouse ile buton merkezi arasındaki mesafe ve yön
+            const deltaX = mouseX - btnCenterX;
+            const deltaY = mouseY - btnCenterY;
+            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            
+            // Eğer mouse çok uzaktaysa hareket etme
+            if (distance > 120) return;
+            
+            // Kaçma yönü ve hızı - daha hızlı kaçma
+            const escapeSpeed = 8; // Daha hızlı kaçma
+            const escapeX = distance > 0 ? (-deltaX / distance) * escapeSpeed : 0;
+            const escapeY = distance > 0 ? (-deltaY / distance) * escapeSpeed : 0;
+            
+            // Yeni pozisyon
+            let newX = btnX + escapeX;
+            let newY = btnY + escapeY;
+            
+            // Container sınırları kontrolü - sınıra gelince merkeze sıçra
+            const margin = 20;
+            const maxX = containerRect.width - btnRect.width - margin;
+            const maxY = containerRect.height - btnRect.height - margin;
+            
+            // Sınırlara çok yakınsa merkeze sıçra
+            const centerX = containerRect.width / 2 - btnRect.width / 2;
+            const centerY = containerRect.height / 2 - btnRect.height / 2;
+            
+            if (newX <= margin || newX >= maxX || newY <= margin || newY >= maxY) {
+              // Merkeze sıçra
+              newX = centerX;
+              newY = centerY;
+            } else {
+              // Normal sınır kontrolü
+              newX = Math.max(margin, Math.min(newX, maxX));
+              newY = Math.max(margin, Math.min(newY, maxY));
+            }
+            
+            // Pozisyonu güncelle
+            btn.style.position = 'absolute';
+            btn.style.left = newX + 'px';
+            btn.style.top = newY + 'px';
+            btn.style.transition = 'none';
+          }}>
+            <button className="escaping-phone-btn">
+              📞
+            </button>
+          </div>
         </section>
       </main>
       {
